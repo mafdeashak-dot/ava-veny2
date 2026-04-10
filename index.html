@@ -380,15 +380,24 @@ function duplicateContent(){
     
     let html=`<img src="final logo.png" class="logo"><span>${currentText1}</span><img src="final logo.png" class="logo"><span>${currentText2}</span><img src="final logo.png" class="logo"><span>${currentText3}</span>`;
 
-    let totalWidth=0;
+    let div1=document.createElement("div");
+    div1.className="tickerItem";
+    div1.innerHTML=html;
+    div1.style.fontSize=currentFontSize+"px";
+    track.appendChild(div1);
 
-    while(totalWidth < box.offsetWidth * 2){
+    let div2=document.createElement("div");
+    div2.className="tickerItem";
+    div2.innerHTML=html;
+    div2.style.fontSize=currentFontSize+"px";
+    track.appendChild(div2);
+
+    while(track.scrollWidth < box.offsetWidth * 2){
         let div=document.createElement("div");
         div.className="tickerItem";
         div.innerHTML=html;
         div.style.fontSize=currentFontSize+"px";
         track.appendChild(div);
-        totalWidth+=div.offsetWidth;
     }
 }
 // حركة الشريط
